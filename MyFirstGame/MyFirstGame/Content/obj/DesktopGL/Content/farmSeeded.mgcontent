@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/farmSeeded.png</SourceFile>
+  <SourceFile>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/farmSeeded.png</SourceFile>
   <SourceTime>2019-06-01T01:49:33.1462285+03:00</SourceTime>
-  <DestFile>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/farmSeeded.xnb</DestFile>
-  <DestTime>2019-06-01T01:51:44.8851548+03:00</DestTime>
+  <DestFile>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/farmSeeded.xnb</DestFile>
+  <DestTime>2019-06-01T19:48:26.1615566+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T19:35:54+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

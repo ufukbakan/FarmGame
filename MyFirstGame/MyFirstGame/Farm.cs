@@ -47,8 +47,8 @@ namespace MyFirstGame
         public void growCorn(object sender, ElapsedEventArgs e)
         {
             this.texture = emptyTexture;
-            Game1.corns++;
-            Game1.cornString = "Corns: " + Game1.corns.ToString();
+            Game1.corn.count++;
+            Game1.cornString = "Corns: " + Game1.corn.count.ToString();
             cornFarmTimer.Stop();
             this.isSeeded = false;
 
@@ -56,8 +56,8 @@ namespace MyFirstGame
 
         public void Seed()
         {
-            Game1.cornSeeds--;
-            Game1.cornSeedsString = "Corn Seeds: " + Game1.cornSeeds.ToString();
+            Game1.cornSeed.count--;
+            Game1.cornSeedsString = "Corn Seeds: " + Game1.cornSeed.count.ToString();
             this.texture = seededTexture;
             this.isSeeded = true;
             this.cornFarmTimer.Start();

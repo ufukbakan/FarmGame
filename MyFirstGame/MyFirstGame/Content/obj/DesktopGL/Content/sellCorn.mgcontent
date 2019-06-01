@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/sellCorn.png</SourceFile>
+  <SourceFile>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/sellCorn.png</SourceFile>
   <SourceTime>2019-06-01T01:16:16.202426+03:00</SourceTime>
-  <DestFile>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/sellCorn.xnb</DestFile>
-  <DestTime>2019-06-01T01:30:31.6845492+03:00</DestTime>
+  <DestFile>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/sellCorn.xnb</DestFile>
+  <DestTime>2019-06-01T19:48:26.5406646+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T19:35:54+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

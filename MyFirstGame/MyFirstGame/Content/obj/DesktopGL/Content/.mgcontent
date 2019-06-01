@@ -4,14 +4,14 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/ball.png</File>
-    <File>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/bazaar.png</File>
-    <File>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/blackman.png</File>
-    <File>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/coin.png</File>
-    <File>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/farm.png</File>
-    <File>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/farmSeeded.png</File>
-    <File>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/Money.spritefont</File>
-    <File>C:/Users/UFUK/source/repos/MyFirstGame/MyFirstGame/Content/sellCorn.png</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/ball.png</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/bazaar.png</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/blackman.png</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/coin.png</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/farm.png</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/farmSeeded.png</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/Money.spritefont</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/sellCorn.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

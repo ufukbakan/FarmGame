@@ -21,12 +21,17 @@ namespace MyFirstGame
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Timer coinTimer = new Timer(10000);
-        
+        static public Seed cornSeed;
+        static public Vegatable corn;
+
+        List<Seed> seedsList;
+        List<Vegatable> vegatablesList;
+
         static uint lastCoin = 1;
         sellCorn cornSign;
-        public static int cornSeeds = 0;
+        //public static int cornSeeds = 0;
         public static string cornSeedsString;
-        public static int corns = 0;
+        //public static int corns = 0;
         public static string cornString;
         Bazaar pazar;
         List<Farm> farmList = new List<Farm>();
@@ -49,13 +54,15 @@ namespace MyFirstGame
         {
             coinTimer.Elapsed += createCoin;
             coinTimer.Start();
+            corn = new Vegatable("corn");
+            cornSeed = new Seed("cornSeed");
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 1100;
             Content.RootDirectory = "Content";
             moneyString = money.ToString() + " $";
-            cornString = "Corns: " + corns.ToString();
-            cornSeedsString = "Corn Seeds: " + cornSeeds.ToString();
+            cornString = "Corns: " + corn.count.ToString();
+            cornSeedsString = "Corn Seeds: " + cornSeed.count.ToString();
         }
 
         /// <summary>
@@ -130,24 +137,24 @@ namespace MyFirstGame
             {
                 money -= 10;
                 moneyString = money + " $";
-                cornSeeds++;
-                cornSeedsString = "Corn Seeds: " + cornSeeds.ToString();
+                cornSeed.count++;
+                cornSeedsString = "Corn Seeds: " + cornSeed.count.ToString();
                 Thread.Sleep(100);
 
             }
             foreach(Farm farm in farmList)
             {
-                if (cornSeeds > 0 && farm.isSeeded == false && Karakter.hitbox.Intersects(farm.hitbox) && Keyboard.GetState().IsKeyDown(Keys.E))
+                if (cornSeed.count > 0 && farm.isSeeded == false && Karakter.hitbox.Intersects(farm.hitbox) && Keyboard.GetState().IsKeyDown(Keys.E))
                 {
                     farm.Seed();
                 }
             }
 
 
-            if (corns > 0 && Karakter.hitbox.Intersects(pazar.hitbox))
+            if (corn.count > 0 && Karakter.hitbox.Intersects(pazar.hitbox))
             {
-                corns--;
-                cornString = "Corns: " + corns.ToString();
+                corn.count--;
+                cornString = "Corns: " + corn.count.ToString();
                 money += 50;
                 moneyString = money + " $";
             }
@@ -171,22 +178,19 @@ namespace MyFirstGame
             spriteBatch.DrawString(font, cornString, new Vector2(890,0), Color.Black);
             spriteBatch.DrawString(font, cornSeedsString, new Vector2(790, 0), Color.Black);
             cornSign.Draw(spriteBatch);
-            foreach(Farm cf in cornFarmList)
+            foreach(Farm farm in farmList)
             {
-                cf.Draw(spriteBatch);
+                farm.Draw(spriteBatch);
+                if (Karakter.hitbox.Intersects(farm.hitbox))
+                {
+                    spriteBatch.DrawString(font, "Press E to seed", new Vector2(450, 450), Color.Black);
+                }
             }
             pazar.Draw(spriteBatch);
 
             if(cornSign.hitbox.Intersects(Karakter.hitbox))
             {
                 spriteBatch.DrawString(font, "Press E to buy corn seed", new Vector2(450, 450), Color.Black);
-            }
-            foreach(Farm cf in cornFarmList)
-            {
-                if (Karakter.hitbox.Intersects(cf.hitbox))
-                {
-                    spriteBatch.DrawString(font, "Press E to seed", new Vector2(450, 450), Color.Black);
-                }
             }
             
 
