@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace MyFirstGame
 {
@@ -16,14 +17,16 @@ namespace MyFirstGame
         public Seed(string setName)
         {
             name = setName;
-            if(name == "cornSeed")
+            listName = name.Replace("Seed", "");
+            listName = Char.ToUpper(listName[0]) + listName.Substring(1) + " Seed";
+            /*if(name == "cornSeed")
             {
                 listName = "Corn Seed";
             }
             else if(name == "pumpkinSeed")
             {
                 listName = "Pumpkin Seed";
-            }
+            }*/
         }
     }
 }

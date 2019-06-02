@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ufo/Documents/FarmGame-master/MyFirstGame/MyFirstGame/Content/bazaar.png</SourceFile>
-  <SourceTime>2019-06-02T15:39:53+03:00</SourceTime>
-  <DestFile>C:/Users/ufo/Documents/FarmGame-master/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/bazaar.xnb</DestFile>
-  <DestTime>2019-06-02T15:50:17.264597+03:00</DestTime>
+  <SourceFile>C:/Users/ufo/Documents/FarmGame-master/MyFirstGame/MyFirstGame/Content/watermelonSign.png</SourceFile>
+  <SourceTime>2019-06-02T17:59:56.8380665+03:00</SourceTime>
+  <DestFile>C:/Users/ufo/Documents/FarmGame-master/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/sellWatermelon.xnb</DestFile>
+  <DestTime>2019-06-02T18:04:13.0116807+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

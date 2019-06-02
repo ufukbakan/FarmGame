@@ -10,6 +10,7 @@ namespace MyFirstGame
         public Texture2D texture;
         public Rectangle hitbox;
         public Vector2 position = new Vector2(150, 450);
+        public bool purchasable = true;
 
         public sellSeed(Texture2D setTexture, ref Seed setSeedType)
         {
@@ -38,7 +39,7 @@ namespace MyFirstGame
 
             if (Game1.Karakter.hitbox.Intersects(this.hitbox))
             {
-                spriteBatch.DrawString(font, $"Press E to buy {seedType.listName} seed for {seedType.price}$", new Vector2(450, 450), Color.Black);
+                spriteBatch.DrawString(font, $"Press E to buy {seedType.listName} for {seedType.price}$", new Vector2(450, 450), Color.Black);
             }
         }
 

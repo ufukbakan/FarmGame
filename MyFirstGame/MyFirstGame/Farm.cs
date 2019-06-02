@@ -78,7 +78,15 @@ namespace MyFirstGame
                     Game1.vegatablesList.Add(Game1.pumpkin);
                 }
             }
-                
+            else if (seedType == "watermelonSeed")
+            {
+                Game1.watermelon.count++;
+                if (onList == false)
+                {
+                    Game1.vegatablesList.Add(Game1.watermelon);
+                }
+            }
+
             farmTimer.Stop();
             this.isSeeded = false;
 
@@ -90,6 +98,12 @@ namespace MyFirstGame
             seedType = seedList[seedList.Count - 1].name;
             this.texture = seededTexture;
             this.isSeeded = true;
+            if (seedType == "cornSeed")
+                this.farmTimer.Interval = 15000;
+            else if (seedType == "pumpkinSeed")
+                this.farmTimer.Interval = 25000;
+            else if (seedType == "watermelonSeed")
+                this.farmTimer.Interval = 30000;
             this.farmTimer.Start();
 
             //return seedList[seedList.Count - 1].name;

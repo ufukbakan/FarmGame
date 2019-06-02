@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/Money.spritefont</SourceFile>
-  <SourceTime>2019-05-31T19:33:33.9552361+03:00</SourceTime>
-  <DestFile>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/Money.xnb</DestFile>
-  <DestTime>2019-06-01T19:48:26.5336649+03:00</DestTime>
+  <SourceFile>C:/Users/ufo/Documents/FarmGame-master/MyFirstGame/MyFirstGame/Content/Money.spritefont</SourceFile>
+  <SourceTime>2019-06-02T15:39:53+03:00</SourceTime>
+  <DestFile>C:/Users/ufo/Documents/FarmGame-master/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/Money.xnb</DestFile>
+  <DestTime>2019-06-02T15:50:17.8271131+03:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
-  <ImporterTime>2018-12-08T19:35:54+03:00</ImporterTime>
+  <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
-  <ProcessorTime>2018-12-08T19:35:54+03:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T18:35:54+02:00</ProcessorTime>
   <Parameters>
     <Key>PremultiplyAlpha</Key>
     <Value>True</Value>
