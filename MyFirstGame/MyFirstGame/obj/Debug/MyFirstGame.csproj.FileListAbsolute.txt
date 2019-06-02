@@ -52,3 +52,4 @@ C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\An
 C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\MyFirstGame.pdb
 C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll
 C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\obj\Debug\MyFirstGame.csproj.CopyComplete
+C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\Content\sellPumpkin.xnb

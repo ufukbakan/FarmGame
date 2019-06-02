@@ -12,8 +12,10 @@
     <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/farmSeeded.png</File>
     <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/Money.spritefont</File>
     <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/sellCorn.png</File>
+    <File>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/sellPumpkin.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

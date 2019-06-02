@@ -16,23 +16,28 @@ namespace MyFirstGame
 
     public class Game1 : Game
     {
-        Karakter Karakter;
+        public static Karakter Karakter;
         SpriteFont font;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Timer coinTimer = new Timer(10000);
         static public Seed cornSeed;
+        static public Seed pumpkinSeed;
         static public Vegatable corn;
+        static public Vegatable pumpkin;
 
-        List<Seed> seedsList;
-        List<Vegatable> vegatablesList;
+        List<Seed> seedsList = new List<Seed>();
+        public static List<Vegatable> vegatablesList = new List<Vegatable>();
+        List<sellSeed> signsList = new List<sellSeed>();
 
+        string seedString = "";
         static uint lastCoin = 1;
-        sellCorn cornSign;
+        sellSeed cornSign;
+        sellSeed pumpkinSign;
         //public static int cornSeeds = 0;
-        public static string cornSeedsString;
+        //public static string cornSeedsString;
         //public static int corns = 0;
-        public static string cornString;
+        public static string vegatablesString = "";
         Bazaar pazar;
         List<Farm> farmList = new List<Farm>();
 
@@ -56,13 +61,19 @@ namespace MyFirstGame
             coinTimer.Start();
             corn = new Vegatable("corn");
             cornSeed = new Seed("cornSeed");
+            cornSeed.price = 5;
+            pumpkinSeed = new Seed("pumpkinSeed");
+            pumpkinSeed.price = 25;
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 1100;
             Content.RootDirectory = "Content";
             moneyString = money.ToString() + " $";
-            cornString = "Corns: " + corn.count.ToString();
-            cornSeedsString = "Corn Seeds: " + cornSeed.count.ToString();
+            foreach(Vegatable vg in vegatablesList)
+            {
+                vegatablesString = vg.name + ": " + vg.count.ToString() +"\n";
+            }
+
         }
 
         /// <summary>
@@ -90,10 +101,14 @@ namespace MyFirstGame
             // TODO: use this.Content to load your game content here
             var chTexture = Content.Load<Texture2D>("blackman");
             var cornSignTexture = Content.Load<Texture2D>("sellCorn");
+            var pumpkinSignTexture = Content.Load<Texture2D>("sellPumpkin");
             var farmTexture = Content.Load<Texture2D>("farm");
             var seededFarmTexture = Content.Load<Texture2D>("farmSeeded");
             var bazaarTexture = Content.Load<Texture2D>("bazaar");
-            cornSign = new sellCorn(cornSignTexture);
+            cornSign = new sellSeed(cornSignTexture,ref cornSeed);
+            pumpkinSign = new sellSeed(pumpkinSignTexture, new Vector2(214, 450), ref pumpkinSeed);
+            signsList.Add(cornSign);
+            signsList.Add(pumpkinSign);
             Karakter = new Karakter(chTexture);
             farmList.Add(new Farm(farmTexture, seededFarmTexture));
             farmList.Add(new Farm(farmTexture, seededFarmTexture, new Vector2(1000,182)));
@@ -133,31 +148,81 @@ namespace MyFirstGame
                 coinTimer.Start();
             }
 
-            if(money >= 10 && Karakter.hitbox.Intersects(cornSign.hitbox) && Keyboard.GetState().IsKeyDown(Keys.E))
+            foreach(sellSeed sign in signsList)
             {
-                money -= 10;
-                moneyString = money + " $";
-                cornSeed.count++;
-                cornSeedsString = "Corn Seeds: " + cornSeed.count.ToString();
-                Thread.Sleep(100);
+                if(Karakter.hitbox.Intersects(sign.hitbox) && money >= sign.seedType.price && Keyboard.GetState().IsKeyDown(Keys.E))
+                {
+                    bool onList = false;
+                    money -= sign.seedType.price;
+                    sign.seedType.count++;
+                    moneyString = money + " $";
+
+                    foreach(Seed seed in seedsList)
+                    {
+                        if(seed.name == sign.seedType.name)
+                        {
+                            onList = true;
+                            break;
+                        }
+                    }
+                    if(onList == false)
+                    {
+                        seedsList.Add(sign.seedType);
+                    }
+
+                    Thread.Sleep(200);
+
+                }
+            }
+
+            foreach (Seed seed in seedsList)
+            {
+                if (seed.count == 0)
+                {
+                    seedsList.Remove(seed);
+                    break;
+                }
+            }
+
+            seedString = "";
+            foreach (Seed seed in seedsList)
+            {
+                seedString += seed.listName + " " + seed.count.ToString();
+                seedString += "\n";
+            }
+
+            foreach (Farm farm in farmList)
+            {
+                if (seedsList.Count > 0 && farm.isSeeded == false && Karakter.hitbox.Intersects(farm.hitbox) && Keyboard.GetState().IsKeyDown(Keys.E))
+                {
+                    farm.Seed(ref seedsList);
+                }
 
             }
-            foreach(Farm farm in farmList)
+
+            foreach (Vegatable vg in vegatablesList)
             {
-                if (cornSeed.count > 0 && farm.isSeeded == false && Karakter.hitbox.Intersects(farm.hitbox) && Keyboard.GetState().IsKeyDown(Keys.E))
-                {
-                    farm.Seed();
-                }
+                if (vg.count == 0)
+                    vegatablesList.Remove(vg);
+            }
+
+            vegatablesString = "";
+            foreach (Vegatable vg in vegatablesList)
+            {
+                vegatablesString = vg.name + ": " + vg.count.ToString() + "\n";
             }
 
 
             if (corn.count > 0 && Karakter.hitbox.Intersects(pazar.hitbox))
             {
-                corn.count--;
+
+                /*corn.count--;
                 cornString = "Corns: " + corn.count.ToString();
                 money += 50;
-                moneyString = money + " $";
+                moneyString = money + " $";*/
             }
+
+            
                 base.Update(gameTime);
         }
 
@@ -174,10 +239,14 @@ namespace MyFirstGame
             
             if(CoinList.Count != 0)
                 CoinList[lastCoin -1].Draw(spriteBatch);
+
             spriteBatch.DrawString(font, moneyString, new Vector2(990, 0), Color.Black);
-            spriteBatch.DrawString(font, cornString, new Vector2(890,0), Color.Black);
-            spriteBatch.DrawString(font, cornSeedsString, new Vector2(790, 0), Color.Black);
-            cornSign.Draw(spriteBatch);
+            spriteBatch.DrawString(font, vegatablesString, new Vector2(890,0), Color.Black);
+            spriteBatch.DrawString(font, seedString, new Vector2(790, 0), Color.Black);
+            foreach(sellSeed sign in signsList)
+            {
+                sign.Draw(spriteBatch,font);
+            }
             foreach(Farm farm in farmList)
             {
                 farm.Draw(spriteBatch);
@@ -188,10 +257,10 @@ namespace MyFirstGame
             }
             pazar.Draw(spriteBatch);
 
-            if(cornSign.hitbox.Intersects(Karakter.hitbox))
+            /*if(cornSign.hitbox.Intersects(Karakter.hitbox))
             {
-                spriteBatch.DrawString(font, "Press E to buy corn seed", new Vector2(450, 450), Color.Black);
-            }
+                spriteBatch.DrawString(font, "Press E to buy corn seed for 10$", new Vector2(450, 450), Color.Black);
+            }*/
             
 
             Karakter.Draw(spriteBatch);

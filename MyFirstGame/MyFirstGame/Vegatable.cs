@@ -10,6 +10,7 @@ namespace MyFirstGame
     {
         public string name;
         public int count = 0;
+        public int cost = 0;
 
         public Vegatable(string setName)
         {

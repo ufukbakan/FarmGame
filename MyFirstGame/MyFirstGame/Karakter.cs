@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace MyFirstGame
 {
-    class Karakter
+    public class Karakter
     {
         public Rectangle hitbox;
         public Texture2D texture;
