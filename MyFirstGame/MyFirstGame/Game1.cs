@@ -43,11 +43,15 @@ namespace MyFirstGame
         List<Farm> farmList = new List<Farm>();
 
         Dictionary<uint, Coin> CoinList = new Dictionary<uint, Coin>();
-        int money = 10;
+        int money = 4;
         string moneyString;
 
         KeyboardState newState;
         KeyboardState oldState;
+
+        public static Texture2D goLeftTexture;
+        public static Texture2D goRightTexture;
+        public static Texture2D goUpTexture;
 
 
         public void createCoin(object sender, ElapsedEventArgs e)
@@ -67,17 +71,17 @@ namespace MyFirstGame
             coinTimer.Elapsed += createCoin;
             coinTimer.Start();
             corn = new Vegatable("corn");
-            corn.cost = 15;
+            corn.cost = 5;
             pumpkin = new Vegatable("pumpkin");
-            pumpkin.cost = 60;
+            pumpkin.cost = 22;
             watermelon = new Vegatable("watermelon");
             watermelon.cost = 100;
             cornSeed = new Seed("cornSeed");
-            cornSeed.price = 5;
+            cornSeed.price = 3;
             pumpkinSeed = new Seed("pumpkinSeed");
-            pumpkinSeed.price = 25;
+            pumpkinSeed.price = 15;
             watermelonSeed = new Seed("watermelonSeed");
-            watermelonSeed.price = 40;
+            watermelonSeed.price = 66;
             graphics = new GraphicsDeviceManager(this);
             graphics.PreferredBackBufferHeight = 600;
             graphics.PreferredBackBufferWidth = 1100;
@@ -114,6 +118,9 @@ namespace MyFirstGame
 
             // TODO: use this.Content to load your game content here
             var chTexture = Content.Load<Texture2D>("girlChar");
+            goLeftTexture = Content.Load<Texture2D>("girlGoLeft");
+            goRightTexture = Content.Load<Texture2D>("girlGoRight");
+            goUpTexture = Content.Load<Texture2D>("girlGoUp");
             var cornSignTexture = Content.Load<Texture2D>("sellCorn");
             var pumpkinSignTexture = Content.Load<Texture2D>("sellPumpkin");
             var watermelonSignTexture = Content.Load<Texture2D>("sellWatermelon");
@@ -159,7 +166,7 @@ namespace MyFirstGame
             Karakter.Update();
             if (CoinList.Count != 0 && Karakter.hitbox.Intersects(CoinList[lastCoin - 1].hitbox))
             {
-                money += 10;
+                money += 2;
                 moneyString = money + " $";
                 CoinList.Remove(lastCoin - 1);
                 coinTimer.Start();
@@ -262,8 +269,7 @@ namespace MyFirstGame
             // TODO: Add your drawing code here
             spriteBatch.Begin();
             
-            if(CoinList.Count != 0)
-                CoinList[lastCoin -1].Draw(spriteBatch);
+
 
             spriteBatch.DrawString(font, moneyString, new Vector2(1000, 0), Color.Black);
             spriteBatch.DrawString(font, vegatablesString, new Vector2(890,0), Color.Black);
@@ -277,12 +283,20 @@ namespace MyFirstGame
                 farm.Draw(spriteBatch);
                 if (Karakter.hitbox.Intersects(farm.hitbox) && farm.isSeeded == false)
                 {
-                    spriteBatch.DrawString(font, "Press E to seed", new Vector2(450, 450), Color.Black);
+                    if (seedsList.Count > 0)
+                        spriteBatch.DrawString(font, "Press E to seed", new Vector2(450, 450), Color.Black);
+                    else
+                        spriteBatch.DrawString(font, "You have no seed\nAfter your seeds grown up don't forget to go to bazaar", new Vector2(450, 450), Color.Black);
                 }
+
             }
             pazar.Draw(spriteBatch);
 
+            if (CoinList.Count != 0)
+                CoinList[lastCoin - 1].Draw(spriteBatch);
+
             Karakter.Draw(spriteBatch);
+
             spriteBatch.End();
 
 

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/ufo/Documents/FarmGame-master/MyFirstGame/MyFirstGame/Content/blackman.png</SourceFile>
-  <SourceTime>2019-06-02T15:39:53+03:00</SourceTime>
-  <DestFile>C:/Users/ufo/Documents/FarmGame-master/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/blackman.xnb</DestFile>
-  <DestTime>2019-06-02T15:50:17.264597+03:00</DestTime>
+  <SourceFile>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/blackman.png</SourceFile>
+  <SourceTime>2019-05-31T19:46:06.5063147+03:00</SourceTime>
+  <DestFile>C:/Users/UFUK/Documents/GitHub/FarmGame/MyFirstGame/MyFirstGame/Content/bin/DesktopGL/Content/blackman.xnb</DestFile>
+  <DestTime>2019-06-02T19:23:25.7468871+03:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2018-12-08T18:35:54+02:00</ImporterTime>
+  <ImporterTime>2018-12-08T19:35:54+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2018-12-08T18:35:54+02:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T19:35:54+03:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

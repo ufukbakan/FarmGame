@@ -83,3 +83,8 @@ C:\Users\ufo\Documents\FarmGame-master\MyFirstGame\MyFirstGame\obj\Debug\MyFirst
 C:\Users\ufo\Documents\FarmGame-master\MyFirstGame\MyFirstGame\obj\Debug\MyFirstGame.pdb
 C:\Users\ufo\Documents\FarmGame-master\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\Content\girlChar.xnb
 C:\Users\ufo\Documents\FarmGame-master\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\Content\sellWatermelon.xnb
+C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\Content\girlChar.xnb
+C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\Content\sellWatermelon.xnb
+C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\Content\girlGoLeft.xnb
+C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\Content\girlGoRight.xnb
+C:\Users\UFUK\Documents\GitHub\FarmGame\MyFirstGame\MyFirstGame\bin\DesktopGL\AnyCPU\Debug\Content\girlGoUp.xnb
